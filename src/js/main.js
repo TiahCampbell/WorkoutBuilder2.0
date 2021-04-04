@@ -11,6 +11,7 @@ import hamstrings from "./components/hamstrings";
 import quads from "./components/quads";
 import shoulders from "./components/shoulders";
 import triceps from "./components/triceps";
+import exerciseDetails from "./components/exerciseDetails";
 
 const apiKey = "0397a8d8c90010abe5cfb8c3798335d0b7bbf656";
 const backAPI = `https://wger.de/api/v2/exercise/?muscles=12,3&language=2&appid=${apiKey}`;
@@ -23,7 +24,6 @@ const hamstringsAPI = `https://wger.de/api/v2/exercise/?muscles=11&language=2&ap
 const quadsAPI = `https://wger.de/api/v2/exercise/?muscles=10&language=2&appid=${apiKey}`;
 const shouldersAPI = `https://wger.de/api/v2/exercise/?muscles=2,9&language=2&appid=${apiKey}`;
 const tricepsAPI = `https://wger.de/api/v2/exercise/?muscles=5&language=2&appid=${apiKey}`;
-// const exerciseDetailsAPI = `https://wger.de/api/v2/exerciseinfo/?q=${inputVal}&language=2&appid=${apiKey}`; // edit input value to be exercise id
 const appDiv = document.getElementById("app");
 
 export default() => {
@@ -68,6 +68,7 @@ function navChest(){
         .then(response => response.json())
         .then(data => {
             appDiv.innerHTML = chest(data.results);
+            navExerciseDetails();
         })
         .catch(err => console.log(err));
     });    
@@ -79,11 +80,132 @@ function navBack(){
         fetch(backAPI)
         .then(response => response.json())
         .then(data => {
-            appDiv.innerHTML = chest(data.results);
+            appDiv.innerHTML = back(data.results);
+            navExerciseDetails();
         })
         .catch(err => console.log(err));
     });    
 }
+
+function navShoulders(){
+    const shouldersLink = document.querySelector(".shoulders");
+    shouldersLink.addEventListener('click', function(){
+        fetch(shouldersAPI)
+        .then(response => response.json())
+        .then(data => {
+            appDiv.innerHTML = shoulders(data.results);
+            navExerciseDetails();
+        })
+        .catch(err => console.log(err));
+    });    
+}
+
+function navBiceps(){
+    const bicepsLink = document.querySelector(".biceps");
+    bicepsLink.addEventListener('click', function(){
+        fetch(bicepsAPI)
+        .then(response => response.json())
+        .then(data => {
+            appDiv.innerHTML = biceps(data.results);
+            navExerciseDetails();
+        })
+        .catch(err => console.log(err));
+    });    
+}
+
+function navTriceps(){
+    const tricepsLink = document.querySelector(".triceps");
+    tricepsLink.addEventListener('click', function(){
+        fetch(tricepsAPI)
+        .then(response => response.json())
+        .then(data => {
+            appDiv.innerHTML = triceps(data.results);
+            navExerciseDetails();
+        })
+        .catch(err => console.log(err));
+    });    
+}
+
+function navCore(){
+    const coreLink = document.querySelector(".core");
+    coreLink.addEventListener('click', function(){
+        fetch(coreAPI)
+        .then(response => response.json())
+        .then(data => {
+            appDiv.innerHTML = core(data.results);
+            navExerciseDetails();
+        })
+        .catch(err => console.log(err));
+    });    
+}
+
+function navQuads(){
+    const quadsLink = document.querySelector(".quads");
+    quadsLink.addEventListener('click', function(){
+        fetch(quadsAPI)
+        .then(response => response.json())
+        .then(data => {
+            appDiv.innerHTML = quads(data.results);
+            navExerciseDetails();
+        })
+        .catch(err => console.log(err));
+    });    
+}
+
+function navGlutes(){
+    const glutesLink = document.querySelector(".glutes");
+    glutesLink.addEventListener('click', function(){
+        fetch(glutesAPI)
+        .then(response => response.json())
+        .then(data => {
+            appDiv.innerHTML = glutes(data.results);
+            navExerciseDetails();
+        })
+        .catch(err => console.log(err));
+    });    
+}
+
+function navHamstrings(){
+    const hamstringsLink = document.querySelector(".hamstrings");
+    hamstringsLink.addEventListener('click', function(){
+        fetch(hamstringsAPI)
+        .then(response => response.json())
+        .then(data => {
+            appDiv.innerHTML = hamstrings(data.results);
+            navExerciseDetails();
+        })
+        .catch(err => console.log(err));
+    });    
+}
+
+function navCalves(){
+    const calvesLink = document.querySelector(".calves");
+    calvesLink.addEventListener('click', function(){
+        fetch(calvesAPI)
+        .then(response => response.json())
+        .then(data => {
+            appDiv.innerHTML = calves(data.results);
+            navExerciseDetails();
+        })
+        .catch(err => console.log(err));
+    });    
+}
+
+function navExerciseDetails(){
+    const exerciseNameElements = document.querySelectorAll(".exerciseName");
+    exerciseNameElements.forEach(element => {
+        element.addEventListener('click', function(){
+            const exerciseId = element.id;
+            fetch(`https://wger.de/api/v2/exerciseinfo/${exerciseId}`)
+            .then(response => response.json())
+            .then(data => {
+                appDiv.innerHTML = exerciseDetails(data);
+            })
+            .catch(err => console.log(err));
+        });   
+    });     
+}
+
 
 
 
