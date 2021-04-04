@@ -14,6 +14,7 @@ export default function exerciseDetails(exercise){
                 `
             }).join("")}
             </ol>
+            <button class="addExercise" id="${exercise.id}">Add Exercise To My Workout</button>
         </ul>
     `;
 }

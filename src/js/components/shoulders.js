@@ -6,6 +6,7 @@ export default function shoulders(shouldersExercises){
             return `
             <li class="Content">
                 <h4 class="exerciseName" id="${shouldersExercise.id}">${shouldersExercise.name}</h4>
+                <button class="addExercise" id="${shouldersExercise.id}">Add Exercise To My Workout</button>
             </li>
             `
         }).join("")}

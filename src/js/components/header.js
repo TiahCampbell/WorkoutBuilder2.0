@@ -1,8 +1,11 @@
 export default function header(){
     return `
+    <h1>Use the nav to start looking for exercises to add to your workout!</h1>
+    <div class="currentWorkout">
+            <p>Recommended format: 8-12 reps of each exercise for 3-5 rounds</p>
+    </div>
     <nav>
         <ul>
-            <li class="myWorkout">My Workout</li>
             <li class="chest">Chest</li>
             <li class="back">Back</li>
             <li class="shoulders">Shoulders</li>

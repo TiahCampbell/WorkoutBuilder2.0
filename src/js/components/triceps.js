@@ -6,6 +6,7 @@ export default function triceps(tricepsExercises){
             return `
             <li class="Content">
                 <h4 class="exerciseName" id="${tricepsExercise.id}">${tricepsExercise.name}</h4>
+                <button class="addExercise" id="${tricepsExercise.id}">Add Exercise To My Workout</button>
             </li>
             `
         }).join("")}

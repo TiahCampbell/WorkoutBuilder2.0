@@ -1,6 +1,5 @@
 import header from "./components/header";
 import footer from "./components/footer";
-import myWorkout from "./components/myWorkout";
 import back from "./components/back";
 import biceps from "./components/biceps";
 import calves from "./components/calves";
@@ -29,7 +28,6 @@ const appDiv = document.getElementById("app");
 export default() => {
     setupHeader();
     setupFooter();
-    navMyWorkout();
     navChest();
     navBack();
     navShoulders();
@@ -40,25 +38,18 @@ export default() => {
     navGlutes();
     navHamstrings();
     navCalves();
-    appDiv.innerHTML = myWorkout();
 }
 
 function setupHeader() {
     const headerElement = document.querySelector(".header");
     headerElement.innerHTML = header();
+    navExerciseDetails();
 }
 
 function setupFooter() {
     const footerElement = document.querySelector(".footer");
     footerElement.innerHTML = footer();
     console.log(footerElement);
-}
-
-function navMyWorkout() {
-    const myWorkoutLink = document.querySelector(".myWorkout");
-    myWorkoutLink.addEventListener('click', function(){
-        appDiv.innerHTML = myWorkout();
-    });
 }
 
 function navChest(){
@@ -200,8 +191,49 @@ function navExerciseDetails(){
             .then(response => response.json())
             .then(data => {
                 appDiv.innerHTML = exerciseDetails(data);
+                addExerciseToMyWorkout();
             })
             .catch(err => console.log(err));
+        });   
+    });     
+}
+
+function addExerciseToMyWorkout(){
+    const addExerciseElements = document.querySelectorAll(".addExercise");
+    addExerciseElements.forEach(element => {
+        element.addEventListener('click', function(){
+
+            const exerciseId = element.id;
+            fetch(`https://wger.de/api/v2/exerciseinfo/${exerciseId}`)
+            .then(response => response.json())
+            .then(data => {
+
+                const pElement = document.createElement("p");
+                console.log(data);
+                pElement.innerText = data.name;
+                pElement.class = "exerciseName";
+                console.log(pElement);
+                
+    
+                const divElement = document.querySelector(".currentWorkout");
+                console.log(divElement);  
+                divElement.appendChild(pElement);
+                alert("Exercise Successfully Added To My Workout")
+    
+                const deleteButton = document.createElement("button");
+                deleteButton.innerHTML = "Delete";
+    
+                divElement.appendChild(deleteButton);
+    
+                deleteButton.addEventListener('click', function(){
+                    pElement.remove();
+                    deleteButton.remove();
+                });
+
+            })
+            .catch(err => console.log(err));
+
+            
         });   
     });     
 }

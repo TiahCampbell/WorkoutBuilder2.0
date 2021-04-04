@@ -6,6 +6,7 @@ export default function glutes(glutesExercises){
             return `
             <li class="Content">
                 <h4 class="exerciseName" id="${glutesExercise.id}">${glutesExercise.name}</h4>
+                <button class="addExercise" id="${glutesExercise.id}">Add Exercise To My Workout</button>
             </li>
             `
         }).join("")}

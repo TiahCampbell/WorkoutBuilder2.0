@@ -6,6 +6,7 @@ export default function hamstrings(hamstringsExercises){
             return `
             <li class="Content">
                 <h4 class="exerciseName" id="${hamstringsExercise.id}">${hamstringsExercise.name}</h4>
+                <button class="addExercise" id="${hamstringsExercise.id}">Add Exercise To My Workout</button>
             </li>
             `
         }).join("")}
