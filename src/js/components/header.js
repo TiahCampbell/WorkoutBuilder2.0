@@ -2,7 +2,7 @@ export default function header(){
     return `
     <nav>
         <ul>
-            <li class="myworkout">My Workout</li>
+            <li class="myWorkout">My Workout</li>
             <li class="chest">Chest</li>
             <li class="back">Back</li>
             <li class="shoulders">Shoulders</li>
@@ -11,8 +11,8 @@ export default function header(){
             <li class="core">Core</li>
             <li class="quads">Quads</li>
             <li class="glutes">Glutes</li>
-            <li class="abductors">Abductors</li>
-            <li class="adductors">Adductors</li>
+            <li class="hamstrings">Hamstrings</li>
+            <li class="calves">Calves</li>
         </ul>
     </nav>`;
 }
