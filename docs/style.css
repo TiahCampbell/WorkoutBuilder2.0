@@ -1,4 +1,213 @@
+
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.618em;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    margin-top: 2.5em;
+    background-color: ivory;
+    background-image: url("./images/LightBlueAngles.png");
+}
+
+body {
+    background: rgba(65, 66, 66, 0.507);
+    color: ivory;
+    margin: 0 auto;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .muscleImage {
     background-image: url(https://wger.de/static/images/muscles/muscular_system_front.svg);
 }
+
+hr.dotted {
+    border-top: 3px dotted rgb(45, 59, 77);
+  }
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    background-color: rgba(65, 66, 66, 0.507);
+}
+
+nav ul {
+    display: flex;
+    flex-flow: row;
+}
+
+nav li {
+    display: flex;
+    flex-flow: row;
+    padding: .5em 2em;
+    text-decoration: none;
+    color: ivory;
+}
+
+.Index {
+    margin: 0 auto;
+    max-width: 800px;
+    display: grid;
+    grid-template-rows: repeat(auto, 1fr);
+    grid-row-gap: 1em;
+    grid-column-gap: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.Content {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./images/SolidPaper.png");
+    color: ivory;
+    border-radius: 20px;
+    padding: 1em;
+    -moz-box-shadow: 0 0 10px #000000;
+    -webkit-box-shadow: 0 0 10px #000000;
+    box-shadow: 0 0 10px #000000;
+}
+
+.Content:hover {
+    -moz-box-shadow: 0 0 20px #000000;
+    -webkit-box-shadow: 0 0 20px #000000;
+    box-shadow: 0 0 20px #000000;
+}
+
+.Content h4 {
+padding: 1em;
+}
+
+.Content li {
+padding: 1em;
+}
+
+.DetailsIndex {
+    max-width: 750px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: url("./images/SolidPaper.png");
+    color: ivory;
+    border-radius: 20px;
+    padding: 1em;
+    -moz-box-shadow: 0 0 10px #000000;
+    -webkit-box-shadow: 0 0 10px #000000;
+    box-shadow: 0 0 10px #000000;
+}
+
+.DetailsContent {
+    margin: 0 auto;
+    max-width: 750px;
+    display: grid;
+    grid-template-columns: repeat(2fr, auto);
+    grid-row-gap: 1em;
+    padding: 2em;
+}
+
+.currentWorkout {
+    margin: 0 auto;
+    max-width: 750px;
+    display: grid;
+    grid-template-rows: repeat(auto, 1fr);
+    grid-row-gap: 1em;
+    padding: 2em;
+}
+
+.currentWorkout p {
+    max-width: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./images/SolidPaper.png");
+    color: ivory;
+    border-radius: 20px;
+    padding: 1em;
+    -moz-box-shadow: 0 0 10px #000000;
+    -webkit-box-shadow: 0 0 10px #000000;
+    box-shadow: 0 0 10px #000000;
+    padding: 1em;
+}
+
+.currentWorkout button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Details {
+    max-width: 750px;
+    margin: 0 auto;
+    display: grid;
+    grid-template: repeat(2fr, auto);
+    grid-row-gap: 1em;
+    grid-column-gap: 1em;
+    background-color: rgb(45, 59, 77);
+    color: ivory;
+    border-radius: 20px;
+    padding: 1em;
+    -moz-box-shadow: 0 0 10px #000000;
+    -webkit-box-shadow: 0 0 10px #000000;
+    box-shadow: 0 0 10px #000000;
+}
+
+
+h1 {
+    padding-left: 2em;
+    padding-right: 1em;
+}
+
+h4{
+    padding-left: 1em;
+}
+
+footer {
+    margin: 0 auto;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    color: ivory;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.addExercise {
+    padding-left: 1em;
+    padding-right: 1em;
+    background-color: ivory;
+    color: rgb(45, 59, 77);
+    -moz-box-shadow: 0 0 10px #000000;
+    -webkit-box-shadow: 0 0 10px #000000;
+    box-shadow: 0 0 10px #000000;
+}
+
+.addExercise:hover {
+    -moz-box-shadow: 0 0 20px #000000;
+    -webkit-box-shadow: 0 0 20px #000000;
+    box-shadow: 0 0 20px #000000;
+}
+
+
+
 
