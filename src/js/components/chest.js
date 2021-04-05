@@ -6,7 +6,6 @@ export default function chest(chestExercises){
             return `
             <li class="Content">
                 <h4 class="exerciseName" id="${chestExercise.id}">${chestExercise.name}</h4>
-                <button class="addExercise" id="${chestExercise.id}">Add Exercise To My Workout</button>
             </li>
             `
         }).join("")}

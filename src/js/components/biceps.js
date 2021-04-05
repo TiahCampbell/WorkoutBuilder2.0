@@ -6,7 +6,6 @@ export default function biceps(bicepsExercises){
             return `
             <li class="Content">
                 <h4 class="exerciseName" id="${bicepsExercise.id}">${bicepsExercise.name}</h4>
-                <button class="addExercise" id="${bicepsExercise.id}">Add Exercise To My Workout</button>
             </li>
             `
         }).join("")}

@@ -222,6 +222,7 @@ function addExerciseToMyWorkout(){
     
                 const deleteButton = document.createElement("button");
                 deleteButton.innerHTML = "Delete";
+                deleteButton.class = "addExercise";
     
                 divElement.appendChild(deleteButton);
     
@@ -229,7 +230,7 @@ function addExerciseToMyWorkout(){
                     pElement.remove();
                     deleteButton.remove();
                 });
-
+                navExerciseDetails();
             })
             .catch(err => console.log(err));
 

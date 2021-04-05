@@ -6,7 +6,6 @@ export default function quads(quadsExercises){
             return `
             <li class="Content">
                 <h4 class="exerciseName" id="${quadsExercise.id}">${quadsExercise.name}</h4>
-                <button class="addExercise" id="${quadsExercise.id}">Add Exercise To My Workout</button>
             </li>
             `
         }).join("")}

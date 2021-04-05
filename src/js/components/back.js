@@ -6,7 +6,6 @@ export default function back(backExercises){
             return `
             <li class="Content">
                 <h4 class="exerciseName" id="${backExercise.id}">${backExercise.name}</h4>
-                <button class="addExercise" id="${backExercise.id}">Add Exercise To My Workout</button>
             </li>
             `
         }).join("")}
